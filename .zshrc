@@ -6,15 +6,17 @@
 
 
 ### session init
-	export EDITOR=nvim		
-	eval $(thefuck -	-alias --enable-experimental-instant-mode)
+	export EDITOR=nvim
+	eval $(thefuck --alias --enable-experimental-instant-mode)
 	export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 	ufetch
 
 ### function utils
-	# this does something useful
+	# find
 	function f() { find . -iname "*$1*" ${@:2} }
-	function r() { grep "$1" ${@:2} -R . }
+
+    # search in files
+	function r() { grep -Rnwi "$1" ${@:2} . }
 
 	# find and move to directory
 	fd() {
