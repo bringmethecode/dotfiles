@@ -1,0 +1,20 @@
+# compton
+#al-compositor --start &
+compton &
+
+# required for xfce settings to work
+xfsettingsd &
+xfce4-power-manager &
+start-pulseaudio-x11 &
+
+# fancy window switcher
+skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
+
+# start the panel
+al-polybar-session &
+
+# restore wallpaper
+~/.fehbg &
+
+# start conky
+# al-conky-session --autostart &

@@ -1,0 +1,67 @@
+;=====================================================
+;     File Includes
+;=====================================================
+
+[section/base]
+include-file = /home/ansky/.config/polybar/master.conf
+include-file = /home/ansky/.config/polybar/modules.conf
+include-file = /home/ansky/.config/polybar/v-modules.conf
+
+;=====================================================
+;     Openbox Bars
+;=====================================================
+
+[bar/openbox-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor = eDP1
+
+modules-left   = v-time v-cpu v-memory 
+modules-center =
+modules-right  = v-volume v-wlan v-battery 
+
+
+;=====================================================
+;     i3 Bars
+;=====================================================
+
+[bar/i3-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+
+modules-left   = i3 menu
+modules-center = clock
+modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume}
+
+
+;=====================================================
+;     Bspwm Bars
+;=====================================================
+
+[bar/bspwm-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+
+modules-left   = bspwm menu
+modules-center = clock
+modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume}
+
+;=====================================================
+;     Openbox Bars
+;=====================================================
+
+[bar/generic-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+
+modules-left   = workspaces menu
+modules-center = clock
+modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume}
+
