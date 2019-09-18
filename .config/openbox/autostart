@@ -11,7 +11,14 @@ start-pulseaudio-x11 &
 skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
 
 # start the panel
-al-polybar-session &
+
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m al-polybar-session --reload &
+  done
+else
+  al-polybar-session --reload &
+fi
 
 # restore wallpaper
 ~/.fehbg &

@@ -15,11 +15,11 @@ include-file = /home/ansky/.config/polybar/v-modules.conf
 inherit = bar/master
 
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor = eDP1
+monitor = ${env:MONITOR:eDP1}
 
-modules-left   = v-time v-cpu v-memory 
+modules-left   = v-time
 modules-center =
-modules-right  = v-volume v-wlan v-battery 
+modules-right  = v-volume v-wifi v-battery 
 
 
 ;=====================================================
@@ -30,7 +30,7 @@ modules-right  = v-volume v-wlan v-battery
 inherit = bar/master
 
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
+; monitor =
 
 modules-left   = i3 menu
 modules-center = clock
@@ -55,13 +55,10 @@ modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network vo
 ;     Openbox Bars
 ;=====================================================
 
-[bar/generic-bar]
-inherit = bar/master
+;[bar/generic-bar]
+;inherit = bar/master
 
-; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
-
-modules-left   = workspaces menu
-modules-center = clock
-modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume}
+;modules-left   = workspaces menu
+;modules-center = clock
+;modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume}
 

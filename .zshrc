@@ -1,5 +1,5 @@
 ### oh-my-zsh
-	export ZSH="/home/ansky/.oh-my-zsh"
+export ZSH="/home/ansky/.oh-my-zsh"
 	ZSH_THEME="terminalpartied"
 	plugins=(git)
 	source $ZSH/oh-my-zsh.sh
@@ -15,7 +15,7 @@
 	# find
 	function f() { find . -iname "*$1*" ${@:2} }
 
-    # search in files
+  # search in files
 	function r() { grep -Rnwi "$1" ${@:2} . }
 
 	# find and move to directory
@@ -54,3 +54,19 @@
 
 ### path
 	export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ansky/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/ansky/.google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ansky/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ansky/.google-cloud-sdk/completion.zsh.inc'; fi
+
+# android home
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export XDG_USER_CONFIG_DIR=~/.config
+
